@@ -1,0 +1,19 @@
+<h3>Todo</h3>
+<div>
+  <label>Todo Items:
+    <input #TodoName />
+  </label>
+  <button (click)="add(TodoName.value); TodoName.value=''">
+    add
+  </button>
+</div>
+
+<ul  *ngFor="let item of todos">
+  <li *ngIf = "item.name">
+    <div >
+      <span>{{item.name}}</span>
+      <button class="delete" title="delete item"
+      (click)="delete(item)">x</button>
+    </div>  
+  </li>
+</ul>
